@@ -1,3 +1,2 @@
-export const characters = ['bowerman', 'swordsman', 'magician', 'undead', 'zombie', 'daemon'];
-
-
+const characters = ['bowerman', 'swordsman', 'magician', 'undead', 'zombie', 'daemon'];
+export default characters;

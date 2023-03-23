@@ -1,4 +1,4 @@
-import { characters } from './app';
+import characters from './app';
 
 export default class Character {
   constructor(name, type) {
