@@ -17,7 +17,7 @@ const zombie = new Zombie('Sergey', 'Zombie');
 const undead = new Undead('Alena', 'Undead');
 
 const team = new Team();
-
+ 
 test('method add', () => {
     team.add(bowerman);
     team.add(bowerman);
@@ -27,12 +27,24 @@ test('method add', () => {
     expect(result).toBe(1);
 })
 
+test('method add Error', () => {
+  team.add(bowerman);
+  team.add(bowerman);
+  expect(team.members.error).toBe(`Персонажи Bowerman, уже есть в команде повторное добавление не возможно`);
+})
+
 test('method addAll', () => {
     team.addAll(bowerman, swordsman, daemon, magician, zombie, zombie, undead, undead);
 
     const result = team.members.size;
 
     expect(result).toBe(6);
+})
+
+test('method addAll', () => {
+  team.addAll(bowerman, swordsman);
+
+  expect(team.members.error).toBe(`Персонажи Bowerman, Swordsman, уже есть в команде повторное добавление не возможно`);
 })
 
 test('method toArray', () => {
